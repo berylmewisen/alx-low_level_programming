@@ -5,6 +5,10 @@
  */
 int main(void)
 {
-puts("\"Programming is like building a multilingual puzzle);
-return(0);
-}
+	const char *y = "Programming is like building a multilingual puzzle";
+	puts(y);
+
+	return (0);
+}	
+
+
