@@ -1,4 +1,5 @@
-#include <studio.h>
+#include <stdio.h>
+#include "main.h"
 /**
  * main - this is a function to print its name
  * @argc: argc parameter
