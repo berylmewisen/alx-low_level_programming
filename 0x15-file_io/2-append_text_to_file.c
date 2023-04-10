@@ -18,7 +18,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (strcmp(text_content, "") == 0)
 	fp = fopen(filename, "a");
 
-	if ((fp == NULL))
+	if (fp == NULL)
 		return (-1);
 	while (text_content[i] != '\0')
 	{
