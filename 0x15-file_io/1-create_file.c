@@ -1,27 +1,32 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * create__file - creates a file that is required
- * @filename: name of file
- * @text__content: A pointer to a string to write to the file
- *
- * Return: 1 on succes and -1 on failure
+ * create_file - creates a file
+ * @filename: name of the file
+ * @text_content: content to put in the file
+ * Return: 1 on success and -1 on failure
  */
-int create_file(const char *filename, char *text__content)
+int create_file(const char *filename, char *text_content)
 {
-	int fd, w, len = 0;
+	FILE *fp;
+	int i = 0;
 
 	if (filename == NULL)
 		return (-1);
-	if (text__content != NULL)
-	{
-		for (len = 0; text__content[len];)
-			len++;
-	}
-	fd = open(filename, O_creat | O_RDWR | O_TRUNC, 0600);
-	W = write(fd, text__content, len);
 
-	if (fd == -1 || w == -1)
+	if (text_content == NULL)
+		text_content = "";
+	fp = fopen(filename, "w");
+
+	if ((fp = NULL))
 		return (-1);
-	close(fd);
+	chmod(filename, 0600);
+
+	while (text_content[i] != '\0')
+	{
+		putc(text_content[i], fp);
+		i++;
+	}
+	fclose(fp);
 	return (1);
 }
